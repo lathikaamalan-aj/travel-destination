@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YOUR PEACE GUIDE – Travel Destination Guide</title>
+<meta name="description" content="Find your ideal travel destination in India by budget, season, interests and trip length.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<a class="skip" href="#quiz">Skip to questionnaire</a>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#home" aria-label="YOUR PEACE GUIDE home"><span class="logo-mark">🌿</span><span>YOUR PEACE GUIDE</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#home">Home</a><a href="#explore">Explore Destinations</a><a href="#about">About</a>
+  </nav>
+</header>
+
+<!-- HERO with crossfading slideshow -->
+<section class="hero" id="home">
+  <div class="slides" id="slides" aria-hidden="true"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <p class="brand-sub">Travel Destination Guide</p>
+    <h1 class="brand">YOUR PEACE GUIDE</h1>
+    <h2 class="headline">Find Your Peace. Discover Your Place.</h2>
+    <p class="lead">Tell us your travel dreams, and let us guide you to the perfect destination.</p>
+    <a href="#quiz" class="btn btn-primary" id="startBtn">Start Your Journey →</a>
+    <p class="slide-caption" id="slideCaption" aria-live="off"></p>
+  </div>
+</section>
+
+<!-- QUESTIONNAIRE -->
+<section class="section quiz-section" id="quiz">
+  <div class="quiz-card glass" id="quizCard">
+    <ol class="stepper" id="stepper" aria-hidden="true"></ol>
+    <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+    <p class="step-label" id="stepLabel" aria-live="polite"></p>
+    <h3 class="q-title" id="qTitle"></h3>
+    <div class="options" id="options" role="radiogroup" aria-labelledby="qTitle"></div>
+    <p class="error" id="qError" role="alert" hidden>Pick an option to continue.</p>
+    <div class="q-actions">
+      <button class="btn btn-ghost" id="prevBtn">← Previous</button>
+      <button class="btn btn-primary" id="nextBtn">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section results" id="results" hidden>
+  <div class="container">
+    <h2 class="section-title" id="resultsTitle" tabindex="-1">Your Peaceful Escape Awaits 🌿</h2>
+    <p class="section-sub" id="resultsSub"></p>
+    <div id="loader" class="loader" hidden><span></span><span></span><span></span><p>Finding places that feel right…</p></div>
+    <div id="resultsGrid" class="grid"></div>
+    <div id="resultsMsg" class="notice" hidden></div>
+    <button class="btn btn-outline" id="restartBtn">Start over</button>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section class="section" id="explore">
+  <div class="container">
+    <h2 class="section-title">Explore Popular Destinations</h2>
+    <p class="section-sub">A few places travellers love across India.</p>
+    <div id="exploreGrid" class="grid grid-compact"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why">
+  <div class="container">
+    <h2 class="section-title">Why YOUR PEACE GUIDE?</h2>
+    <div class="why-grid">
+      <article><span>🧭</span><h3>Personalised recommendations</h3><p>Five quick questions shape a list made for you.</p></article>
+      <article><span>💰</span><h3>Budget-friendly discovery</h3><p>See realistic trip costs before you start planning.</p></article>
+      <article><span>🍃</span><h3>Seasonal suggestions</h3><p>Go when a place is at its best.</p></article>
+      <article><span>⚖️</span><h3>Easy comparison</h3><p>Budget, season and duration sit side by side on every card.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container narrow">
+    <h2 class="section-title">About</h2>
+    <p>Choosing where to go shouldn't take longer than the trip. YOUR PEACE GUIDE compares your budget, season, interests, trip length and region with a curated set of Indian destinations, then ranks the places whose character fits you best.</p>
+    <p>Recommendations use content-based filtering: your answers become a short profile that is compared with each destination's profile using TF-IDF and cosine similarity, combined with how well budget and duration fit.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-in">
+    <div><strong>YOUR PEACE GUIDE</strong><p>Travel Destination Guide</p></div>
+    <nav aria-label="Footer"><a href="#home">Home</a><a href="#explore">Explore Destinations</a><a href="#about">About</a></nav>
+  </div>
+  <p class="copy">© <span id="year"></span> YOUR PEACE GUIDE. All rights reserved.</p>
+</footer>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
