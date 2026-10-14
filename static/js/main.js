@@ -38,7 +38,7 @@
       els.forEach(e => e.classList.remove('active'));
       i = (i + 1) % els.length;
       while (!els[i].dataset.ok) i = (i + 1) % els.length;
-      void els[i].offsetWidth;            // restart zoom animation
+      void els[i].offsetWidth; // restart zoom animation
       els[i].classList.add('active');
       cap.textContent = SLIDES[i].caption;
     };
@@ -105,7 +105,7 @@
   }
 
   function onNext() {
-    if (!answers[QUESTIONS[step].key]) { $('#qError').hidden = false; return; }   // validation
+    if (!answers[QUESTIONS[step].key]) { $('#qError').hidden = false; return; } // validation
     if (step < QUESTIONS.length - 1) { dir = 1; step++; renderStep(); }
     else { $('#progressBar').style.width = '100%'; showResults(); }
   }
@@ -174,7 +174,7 @@
         </div>
       </div>`;
     const img = $('img', el);
-    img.onerror = () => img.remove();                       // gradient fallback shows through
+    img.onerror = () => img.remove(); // gradient fallback shows through
     $('.more-btn', el).onclick = e => {
       const open = el.classList.toggle('open');
       e.target.setAttribute('aria-expanded', open); e.target.textContent = open ? 'Show less' : 'Explore More';
@@ -202,7 +202,7 @@
   /* ---------- Init ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     initSlideshow(); renderStep(); loadExplore();
-    $('#year').textContent = new Date().getFullYear();
+    const yr = $('#year'); if (yr) yr.textContent = new Date().getFullYear(); // safe if the element is missing
     $('#nextBtn').onclick = onNext;
     $('#prevBtn').onclick = () => { if (step) { dir = -1; step--; renderStep(); } };
     $('#restartBtn').onclick = () => {
@@ -215,3 +215,4 @@
     links.onclick = () => links.classList.remove('open');
   });
 })();
+
